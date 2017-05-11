@@ -1,0 +1,26 @@
+<html>
+<head>
+<style tyle="text/css">
+.bgStyle{
+width: 1200;
+height: 500;
+border: 2px solid #212121 
+}
+</style>
+<script src="clock.js"></script>
+<title></title>
+
+</head>
+
+<body>
+<canvas id="cvsPanel" class="bgStyle" ></canvas>
+
+<script type="text/javascript">
+var canvas = document.getElementById("cvsPanel");
+var context = canvas.getContext("2d");
+
+var clockMaster = new Clock(context);
+clockMaster.Run();
+</script>
+</body>
+</html>

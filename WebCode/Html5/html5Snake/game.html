@@ -1,0 +1,162 @@
+<html>
+<head>
+<title>html5 snake game</title>
+<script src ="game.js" ></script>
+</head>
+
+<body>
+
+<table>
+<tr>
+<td>
+<!--
+游戏面板
+-->
+<canvas id="cvsPnl" style="top:0px;border:5px solid;color:#FF9900" width="10" height="10" >你的浏览器不支持这个游戏！</canvas>
+</td>
+<td valign="top">
+<!--
+配置面板
+-->
+<div id="divSpeed">
+<canvas id="cvsSpeed" width="120px" height="55px" ></canvas>
+<select id="selSpeed">
+<option value="1000">1000</option>
+<option value="800">800</option>
+<option value="500">500</option>
+<option value="300">300</option>
+<option value="200">200</option>
+</select>
+</div>
+
+<div id="divGameCtl">
+<input id="btnStartGame" type="button" value="开始"></input>&nbsp;&nbsp;
+<input id="btnPauseGame" type="button" value="暂停" ></input>
+<br />
+</div>
+<br />
+<div id="divPlayerName">
+
+<canvas id="cvsName" width="50px" height="52px"></canvas><input type="text" id="txtName" style="width:120px;"></input>
+<input id="btnRememberMe" value="记住我" type="button"></input>
+</div>
+
+<div>
+<canvas id="cvsScore" ></canvas>
+</div>
+
+
+</td>
+</tr>
+<table>
+
+
+<div id="debug"></div>
+
+<script type="text/javascript">
+     
+////游戏画板
+var canvasGamePnl = document.getElementById("cvsPnl");
+var context = canvasGamePnl.getContext("2d");
+
+////分数
+var canvasScore = document.getElementById("cvsScore");
+var contextScore = canvasScore.getContext("2d");
+
+////速度
+var canvasSpeed = document.getElementById("cvsSpeed");
+var contextSpeed = canvasSpeed.getContext("2d");
+
+////姓名
+var canvasName = document.getElementById("cvsName");
+var contextName = canvasName.getContext("2d");
+
+////开始
+$("btnStartGame").onclick=function(){
+
+this.gameMaster  = new GameMaster(context,contextScore);
+
+this.gameMaster.GameStart();
+}
+
+////暂停/继续
+$("btnPauseGame").onclick = function(){
+	 if($("btnPauseGame").value == "继续"){
+	this.gameMaster.RunGame(this.gameMaster);
+	 $("btnPauseGame").value = "暂停";
+	 gameStatus = 1;
+	 }
+	 else{
+	 this.gameMaster.PauseGame();
+	 $("btnPauseGame").value = "继续";
+	 gameStatus = 2;
+	 }
+}
+
+////加载
+	 window.onload=function(){
+	 this.player = new Player();
+	 this.drawingHelper = new DrawingHelper(context);
+
+	 $("cvsPnl").width =screenWidth;
+	 $("cvsPnl").height=screenHeight;
+     $("selSpeed").selectedIndex = 0;
+
+	 this.drawingHelper.DrawFont(contextSpeed,"选择游戏速度",120);
+	 this.drawingHelper.DrawFont(contextName,"姓名",50);
+
+	 $("txtName").value = this.player.GetPlayerName();
+	 }
+
+
+
+////键盘事件handler
+     document.onkeydown = function (){
+      var key = document.all ? event.keyCode : arguments[0].keyCode;
+	  ////left
+	  if(key == 37){
+	  if(direction != "right"){
+	  direction = "left";
+	  }
+	  }
+	  ////up
+	  else if(key == 38){
+	  if(direction != "down"){
+	  direction ="up";
+	  }
+	  }
+	  ////right
+	  else if(key == 39){
+	  if(direction != "left"){
+	  direction = "right";
+	  }
+	  }
+	  ////down
+	  else if(key == 40){
+	  if(direction != "up"){
+	  direction = "down";
+	  }
+	  }
+     }
+
+	 ////设置速度
+	 $("selSpeed").onchange=function(){
+	 if(gameStatus != 3){
+	 sleepTime = parseInt(GetSelectObj("selSpeed").value);
+	 }
+
+	 }
+
+	 /////记住我
+	 $("btnRememberMe").onclick = function(){
+	 this.player.StorePlayerName($("txtName").value);
+	 alert("已保存");
+	 }
+
+	 
+
+</script>
+</body>
+
+
+</html>

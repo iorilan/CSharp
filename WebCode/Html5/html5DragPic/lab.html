@@ -1,0 +1,22 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>拖拽本地图片到页面指定元素内</title>
+       <script src="drag.js"></script>
+	   <script type="text/javascript">
+	    window.onload = function() {
+		var fd = new FileDrager("dropBox",this);
+		fd.Init();
+		
+		}
+	   </script>
+	</head>
+	<body>
+	   
+	    <div id="dropBox" style="float:left;width:400px;height:300px;margin:10px 0 0 0;border:1px solid #015EAC;color:#666;overflow:hidden;clear:left;font-size:12px;">
+	                   拖拽图片到这里！
+	    </div>
+	</body>
+</html>

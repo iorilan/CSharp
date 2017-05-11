@@ -1,0 +1,165 @@
+<html>
+<head>
+<script src="jquery-1.6.js" ></script>
+</head>
+
+<body>
+
+<div id="supportH5"></div>
+
+<canvas id="cvsBorder" style="border:5px solid;color:green" width="300px" height="100px""></canvas>
+<canvas id="cvsLine" style="border:5px solid;color:green" width="300px" height="100px""></canvas>
+<br />
+<canvas id="cvsFont" style="border:5px solid;color:green" width="300px" height="200px""></canvas>
+<canvas id="cvsOpyPath" style="border:5px solid;color:green" width="300px" height="100px""></canvas>
+<canvas id="cvsFill" style="border:5px solid;color:green" width="300px" height="100px""></canvas>
+<br />
+<canvas id="cvsImage" style="border:5px solid;color:green" width="300px" height="100px""></canvas>
+<canvas id="cvsGradient" style="border:5px solid;color:green" width="300px" height="100px""></canvas>
+</body>
+
+<script type="text/javascript">
+
+$(document).ready(function(){
+RestoreLine();
+StrokeStyle();
+DrawImage();
+GradientPractice();
+DrawRect();
+});
+
+//////////浏览器是否支持HTML5////////////
+function IsSupportH5(){
+try{
+document.createElement("canvas").getContext("2d");
+$("#supportH5").html("your browser support HTML5.");
+}
+catch(e){
+$("#supportH5").html("your browser not support HTML5.");
+}
+}
+///////////////end////////////////////////
+
+//////////////画直线//////////////////////
+function DrawLine(){
+var canvas = document.getElementById("cvsLine");
+var context = canvas.getContext("2d");
+context.beginPath();
+context.moveTo(0,0);
+context.lineTo(140,70);
+context.stroke();
+
+context.closePath();
+}
+///////////////end////////////////////////
+
+///////////////文字练习////////////////
+function RestoreLine(){
+var canvas = document.getElementById("cvsFont");
+var context = canvas.getContext("2d");
+
+ context.save(); 
+ context.font='60px impact';  
+ context.fillStyle='#996600';  
+ context.textAlign='center';
+ context.shadowColor="#00ff00";
+ context.shadowOffsetX = 15;
+ context.shadowOffsetY=-10;
+ context.fillText('Happy Trails!',150,160,300);  
+ context.restore();  
+ context.save();  
+
+}
+
+///////////////end////////////////////////
+
+/////////////////样式/////////////
+function StrokeStyle(){
+var canvas = document.getElementById("cvsOpyPath");
+var context = canvas.getContext("2d");
+
+context.save();
+context.moveTo(50,50);
+context.lineWidth=40;
+context.lineJoin="round";
+context.strokeStyle = "#663300";
+context.lineTo(100,100);
+context.stroke();
+context.restore();
+}
+
+///////////////end////////////////////////
+
+///////////////模拟进度条//////////////////////
+
+function Progress(){
+var canvas = document.getElementById("cvsFill");
+var context = canvas.getContext("2d");
+
+context.fillStyle="#00ff00";
+
+var start = 1;
+var max = 10;
+var timer = setInterval(function(){
+
+if(start == max){
+clearInterval(timer);
+}
+
+context.fillRect(0,0,start * 20,100);
+start ++;
+},1000);
+
+}
+
+///////////////end////////////////////////
+
+////////////////画图片///////////////////
+function DrawImage(){
+var canvas = document.getElementById("cvsImage");
+var context = canvas.getContext("2d");
+
+var img = new Image();
+img.src = "1.png";
+context.drawImage(img,0,0,100,100);
+
+}
+
+///////////////end////////////////////////
+
+
+///////////////渐变练习//////////////////
+function GradientPractice(){
+var canvas = document.getElementById("cvsGradient");
+var context = canvas.getContext("2d");
+
+var grd = context.createLinearGradient(0,0,50,100);
+grd.addColorStop(0,"#00000f");
+grd.addColorStop(0.4,"#ffffff");
+grd.addColorStop(1,"#d3d3d3");
+
+context.fillStyle = grd;
+context.fillRect(0,0,50,100);
+}
+
+///////////////end////////////////////////
+
+////画方块
+function DrawRect(left,right,width,height,color){
+var canvas = document.getElementById("cvsFill");
+var context = canvas.getContext("2d");
+		context.clearRect(left,right,width,height);
+		//设置填充样式
+		context.strokeStyle = color;
+		context.strokeRect(left,right, width, height);
+}
+
+///////////////end////////////////////////
+///////////////end////////////////////////
+///////////////end////////////////////////
+///////////////end////////////////////////
+///////////////end////////////////////////
+///////////////end////////////////////////
+</script> 
+
+</html>

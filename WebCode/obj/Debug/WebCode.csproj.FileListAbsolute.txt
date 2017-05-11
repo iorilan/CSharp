@@ -1,0 +1,5 @@
+D:\Project2013\CodeBox\CodeBox\WebCode\bin\WebCode.dll
+D:\Project2013\CodeBox\CodeBox\WebCode\bin\WebCode.pdb
+D:\Project2013\CodeBox\CodeBox\WebCode\obj\Debug\WebCode.csprojResolveAssemblyReference.cache
+D:\Project2013\CodeBox\CodeBox\WebCode\obj\Debug\WebCode.dll
+D:\Project2013\CodeBox\CodeBox\WebCode\obj\Debug\WebCode.pdb

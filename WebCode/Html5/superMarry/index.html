@@ -1,0 +1,80 @@
+<html >
+<head>
+<title></title>
+<script src="game.js"></script>
+</head>
+<table>
+<tr>
+<td>
+<canvas id="cvsPnl" width = 800 height = 500 style="border:2px #939393 solid"></canvas>
+</td>
+<td>V0.2版本，碰到怪就死</td>
+</tr>
+</table>
+<div id="debug" style="width:200px;height:20px;"></div>
+<body>
+
+
+
+<script type="text/javascript">
+
+
+var canvas = document.getElementById("cvsPnl");
+var context = canvas.getContext("2d");
+
+////全局游戏控制器
+var gameMaster;
+     window.onload=function(){
+	 gameMaster = new GameMaster(context);
+	 gameMaster.GameStart();
+	 }
+
+////键盘事件handler
+     document.onkeydown = function (){
+      var key = document.all ? event.keyCode : arguments[0].keyCode;
+	  
+	  ////left
+	  if(key == 37){
+	  marry.setMoving(true);
+	  marry.setDirection("left");
+	  }
+	  ////up
+	  else if(key == 38){
+	////0.1版本先不加
+	marry.setJump(true);
+	
+	  }
+	  ////right
+	  else if(key == 39){
+	marry.setDirection("right");
+	marry.setMoving(true);
+	  }
+	  
+	  //down
+	  else if(key == 40){
+	 ////0.1版本先不加
+	  }
+     }
+////连续按键时使用
+	 document.onkeyup = function(){
+	 var key = document.all ? event.keyCode : arguments[0].keyCode;
+	 
+	  if(key == 37 || key == 39){
+    marry.setMoving(false);
+	  }
+	 }
+////鼠标事件
+	 document.onclick=function(e){
+	 ////如果是左键
+	 if (e.button == 0){
+
+	// clickX = Math.round(e.clientX/10) * 10;
+	// clickY = Math.round(e.clientY/10) * 10;
+
+	 }
+	 
+	 }
+
+</script>
+</body>
+</html>

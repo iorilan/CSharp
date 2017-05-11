@@ -1,0 +1,52 @@
+<html >
+<head>
+<title></title>
+<div id="test">
+dasdsadsa
+</div>
+</head>
+
+<body>
+  <div id="d1">
+             <p><a href="http://www.sina.com.cn">SINA</a></p>
+             <input type='text' value='lingyibin' id='test'/>
+             <input type='text' value='jasonling' id='test2' disabled />
+             <span class='testSpan'> 这里是span的地盘！ </span>
+             <ul>
+                 <li>111</li>
+                 <li class='2'>222</li>
+                 <li>333</li>
+             </ul>
+             <span><label>label000</label></span>            
+             <label>label111</label>
+         </div>
+         <label>label222</label></br>
+         <label>label333</label></br>
+         <label>label444</label></br>
+         
+		 </body>
+         <script type="text/javascript">  
+		 console.log(document.querySelector('div a').href);
+           //  alert(document.querySelector('div a')); // -> http://www.sina.com.cn/
+             //alert(document.querySelector('div a').innerHTML); // -> SINA
+             //alert(document.querySelectorAll('div a').length); // -> 1 
+             //alert(document.querySelectorAll('div a')[0]); // -> http://www.sina.com.cn/
+            //alert(document.querySelector('#test').value); // -> lingyibin 
+             //alert(document.querySelector('input:disabled').value); // -> jasonling 
+             //alert(document.querySelector('span:not(label)').innerHTML); // -> jasonling 
+             //alert(document.querySelectorAll('input[id^=test]')[1].value); // -> jasonling //以test开头的
+             //alert(document.querySelectorAll('input[id$=t2]').length); // -> 1 //以test结尾的，注意，id$=2就会错，不能以数字开头
+             //alert(document.querySelectorAll('input[id*=est]').length); // -> 2 //模糊匹配
+             //alert(document.querySelector('.testSpan').innerHTML); // -> 这里是span的地盘！
+             //alert(document.querySelector('ul li:nth-child(2)').innerHTML); // -> 222
+             //alert(document.querySelectorAll('ul li:nth-child(3n)')[0].innerHTML); // -> 333
+             //alert(document.querySelectorAll('ul li:nth-child(odd)')[1].innerHTML); // -> 333
+             //alert(document.querySelector('ul li:first-child').innerHTML); // -> 111
+             //alert(document.querySelector('ul li:last-child').innerHTML); // -> 333
+             //alert(document.querySelectorAll('li[class]')[0].innerHTML); // -> 222 //有class属性的li
+             //alert(document.querySelectorAll('div label')[0].innerHTML); // -> label000 //得到div里面所有的label
+             //alert(document.querySelectorAll('div > label')[0].innerHTML); // -> label111 //得到div里面的直接label，在本例中只有一个
+             //alert(document.querySelectorAll('div + label')[0].innerHTML); // -> label222 //注意，这里只能得到一个label
+             //alert(document.querySelectorAll('div ~ label')[1].innerHTML); // -> label333
+         </script>
+</html>

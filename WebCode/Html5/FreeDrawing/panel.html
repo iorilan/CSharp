@@ -1,0 +1,172 @@
+<html>
+<head>
+<script src="colorFactory.js"></script>
+<script src ="jquery.1.9.js"></script>
+<title>Free Drawing</title>
+
+<script type="text/javascript">
+
+var drawingBrd;
+var context;
+
+var penColor ="#FF0000";//
+var penSize = 1;//
+
+var size = [window.width,window.height];  //public variable
+
+window.onload = function(){
+
+//====================event================
+
+drawingBrd = document.getElementById("cvsPanel");
+context = drawingBrd.getContext("2d");
+drawingBrd.onmousedown = mousedownhandler;
+document.onmouseup = mouseuphandler;
+
+
+
+$(window).resize(function(){
+    window.resizeTo(size[0],size[1]);
+});
+
+//=============================================
+
+//======================Color================
+
+var cf = new colorFactory();
+cf.init(document.getElementById("colorBoard"));
+
+//=============================================
+
+//=======================Init Board==================
+
+var sizeCtn = document.getElementById("sizeBoard");
+
+for(var i = 1;i < 200;i +=2){
+sizeCtn.innerHTML += "<span style='border:1px solid #212121;' onclick=changeSize(" + i/10 + ");>" + " &nbsp;" +i/10 +"</span>";
+
+//"<span style='border:1px solid #212121;width:5px;height:5px;' onclick=changeSize(" + i/10 + "); >" + i/10 +"</span>";
+}
+//=============================================
+
+
+//==========================Btn Clear===============
+
+document.getElementById("btnClear").onclick = function(){
+if(!confirm("Remove all without save?")){
+return;
+}
+context.clearRect(0,0,800,600);
+}
+//=============================================
+
+//===========================Save ===============
+
+document.getElementById("btnSave").onclick = function(){
+window.open(drawingBrd.toDataURL(),"Do you want to save?","width=800,height=600,location=no,menubar=no,resizable=no,scrollbars=no,status=no,titlebar=no,toolbar=no");
+}
+//==============================================
+
+}
+
+
+//==================Handle mouse=================
+
+function mousedownhandler(e){
+
+var canvasMouseX = event.layerX;
+                if (!canvasMouseX) {
+                    canvasMouseX = event.x;
+                }
+                var canvasMouseY = event.layerY;
+                if (!canvasMouseY) {
+                    canvasMouseY = event.y;
+                }
+
+context.strokeStyle = penColor;
+context.lineWidth = penSize;
+context.beginPath();
+context.moveTo(e.x,e.y);
+drawingBrd.onmousemove = movedraw;
+
+}
+
+function movedraw(e){
+var canvasMouseX = event.layerX;
+                if (!canvasMouseX) {
+                    canvasMouseX = event.x;
+                }
+                var canvasMouseY = event.layerY;
+                if (!canvasMouseY) {
+                    canvasMouseY = event.y;
+                }
+context.lineTo(e.x,e.y);
+context.stroke();
+//context.closePath();
+}
+
+function mouseuphandler(e){
+drawingBrd.onmousemove = null;
+}
+
+//============================================
+
+//==========================Change one color ============
+
+function changeColor(color){
+penColor = color;
+}
+
+
+function changeSize(size){
+penSize = size;
+}
+
+//==============================================
+
+
+</script>
+</head>
+
+<body>
+
+<!--
+Canvas
+-->
+<canvas id="cvsPanel" width="800px" height="600px" style="border:1px solid #000000" >
+
+</canvas>
+
+<!--
+Tool box
+-->
+<div id="tool" style="float:right">
+
+<!--Color selector-->
+<div id="colorBoard" style="width:400px;height:190px;border: 1px solid #000000;"></div>
+<br />
+<!--
+change size
+-->
+<div id="sizeBoard" style="width:400px;height:230px;border: 1px solid #000000;"></div>
+<br />
+
+<!--
+save and clear
+-->
+<div id="ctlPnl" style="float:right;width:400px;height:50px;border:1px solid #000000;">
+<input type="button" id="btnClear" value="Clear" />
+<input type="button" id="btnSave" value="Save" />
+</div>
+
+<!--
+Others
+-->
+
+</div>
+<br />
+
+
+
+</body>
+</html>

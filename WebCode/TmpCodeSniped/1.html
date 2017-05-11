@@ -1,0 +1,191 @@
+
+<script>
+
+var arr = new Array(31,22,43,14,15,16,77,190,210,98,61,78,45,33,68,92,109,110);
+var morningArr = new Array();
+var afternoonArr = new Array();
+var morningLimit = 180;
+var afternoonLimit = 240;
+var days = 0;
+
+var tmpresult = new Array();
+
+var arrFactorResult = new Array();
+////========================Core====================
+
+
+function find_factor(sum, index,arr)   
+{
+    if(index < 0 || sum <= 0)
+        return;  
+      
+    if(sum == arr[index])
+    {  
+        tmpresult.reverse();
+	
+	var tmpArr = new Array();
+        for(var i =0 ; i < tmpresult.length; i++){
+            tmpArr.push(tmpresult[i]);
+			}
+			
+        tmpArr.push(arr[index]);
+		
+		if(arrFactorResult.indexOf(tmpArr) < 0)
+		arrFactorResult.push(tmpArr);
+		
+        tmpresult.reverse();      
+    }
+	
+    tmpresult.push(arr[index]);
+	
+    find_factor(sum-arr[index], index-1,arr);
+    tmpresult.pop(); 
+	
+    find_factor(sum, index-1,arr);
+	
+}
+
+function findCloseTo(n,arr){
+
+for(var i = n ;i>0; i--){
+tmpresult = new Array();
+arrFactorResult = new Array();
+
+find_factor(i,arr.length,arr);
+
+
+if(arrFactorResult.length > 0)
+{
+break;
+}
+}
+
+return arrFactorResult;
+
+}
+
+
+////================================================
+
+
+////===============================================
+////step 1: find the elements can only put in afternoon , put in afternoon Arr
+function splitMorningAfternoon(){
+for(var i = 0 ;i<arr.length;){
+if(arr[i]>morningLimit && arr[i]<=afternoonLimit)
+{
+afternoonArr.push(arr[i]);
+}
+else{
+morningArr.push(arr[i]);
+}
+arr.splice(i,1);
+}
+
+if(morningArr.length>0)
+{
+//echoL("Morning Session : ");
+for(var i = 0;i<morningArr.length; i++){
+//echo(morningArr[i] + ",");
+}
+}
+
+if(afternoonArr.length){
+//echoL("After noon Session");
+for(var i = 0;i < afternoonArr.length;i++){
+//echo(afternoonArr[i] + ",");
+}
+
+}
+}
+
+
+////================================================
+
+////step 2: arrange morning session , if have not arranged , put in afternoon schedule 
+
+function arrangeMorning(){
+echoL("day "+ ++days);
+var morningSessions = findCloseTo(morningLimit,morningArr);
+
+if(morningSessions.length > 0){
+echoL(" Morning Sessions :");
+
+for(var i = 0;i<morningSessions[0].length;i++)
+{
+echo(morningSessions[0][i]+",");
+morningArr.splice(morningArr.indexOf(morningSessions[0][i]),1);
+}
+
+}
+
+//after morning arrangement , put rest items into afternoon
+if(morningArr.length > 0){
+//echoL("these sessions put to afternoon : ");
+for(var i = 0;i < morningArr.length;i++)
+{
+afternoonArr.push(morningArr[i]);
+//echo(morningArr[i] + ",");
+}
+}
+    
+}
+
+function arrangeAfternoon(){
+
+
+//start arrange afternoon
+var afternoonSessions = findCloseTo(afternoonLimit,afternoonArr);
+
+if(afternoonSessions.length > 0){
+echoL(" Afternoon Sessions : ");
+for(var i = 0;i < afternoonSessions[0].length;i++)
+{
+echo(afternoonSessions[0][i] + ",");
+afternoonArr.splice(afternoonArr.indexOf(afternoonSessions[0][i]),1);
+}
+
+}
+
+if(afternoonArr.length > 0)
+{
+echoL("pending sessions : ");
+for(var i = 0;i<afternoonArr.length;i++)
+echo(afternoonArr[i] +",");
+}
+
+}
+
+function arrangeSession(){
+splitMorningAfternoon();
+arrangeMorning();
+arrangeAfternoon();
+
+if(afternoonArr.length > 0 ){
+arr = afternoonArr;
+morningArr = new Array();
+afternoonArr = new Array();
+
+arrangeSession();
+}
+
+}
+
+arrangeSession();
+
+
+////====================UTIL=========================
+
+function echo(msg){
+document.write(msg);
+}
+
+function echoL(msg){
+document.write("<br />" + msg + "<br />");
+}
+
+////=================================================
+
+
+
+</script>

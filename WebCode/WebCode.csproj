@@ -1,0 +1,353 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{53576F55-D307-4774-9F06-040BBD2CD195}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WebCode</RootNamespace>
+    <AssemblyName>WebCode</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="asp.net\Cache\ObjectCache.aspx" />
+    <Content Include="asp.net\Cache\OutputCache.aspx" />
+    <Content Include="asp.net\Cache\OutputCacheWithP.aspx" />
+    <Content Include="asp.net\DialogPassValue\DivPopup.aspx" />
+    <Content Include="asp.net\JsCSharp\jquery.1.9.js" />
+    <Content Include="asp.net\JsCSharp\JSCSharp.aspx" />
+    <Content Include="asp.net\DialogPassValue\ParentPage.aspx" />
+    <Content Include="asp.net\DialogPassValue\DialogPage.aspx" />
+    <Content Include="asp.net\Redirect\Destination.aspx" />
+    <Content Include="asp.net\Redirect\ExploreRedirect.aspx" />
+    <Content Include="asp.net\Repeater\RepeaterTest.aspx" />
+    <Content Include="asp.net\Validation\TestForValidation.aspx" />
+    <Content Include="Controls\HtmlControl.aspx" />
+    <Content Include="Html5\CanvasClock\Clock.html" />
+    <Content Include="Html5\CanvasClock\clock.js" />
+    <Content Include="Html5\CanvasClock\config.js" />
+    <Content Include="Html5\CanvasClock\drawingHelper.js" />
+    <Content Include="Html5\FreeDrawing\colorFactory.js" />
+    <Content Include="Html5\FreeDrawing\lineFactory.js" />
+    <Content Include="Html5\FreeDrawing\panel.html" />
+    <Content Include="Html5\html5DragPic\drag.js" />
+    <Content Include="Html5\html5DragPic\index.html" />
+    <Content Include="Html5\html5DragPic\lab.html" />
+    <Content Include="Html5\html5DragPic\lab2.html" />
+    <Content Include="Html5\html5DragPic\utility.js" />
+    <Content Include="Html5\html5RPG_V0.1\debug\config.js" />
+    <Content Include="Html5\html5RPG_V0.1\debug\debug.js" />
+    <Content Include="Html5\html5RPG_V0.1\debug\game.html" />
+    <Content Include="Html5\html5RPG_V0.1\debug\game.js" />
+    <Content Include="Html5\html5RPG_V0.1\debug\global.js" />
+    <Content Include="Html5\html5RPG_V0.1\debug\gravity.js" />
+    <Content Include="Html5\html5RPG_V0.1\debug\images\rpg\b_1244457293067.jpg" />
+    <Content Include="Html5\html5RPG_V0.1\debug\images\rpg\hk.png" />
+    <Content Include="Html5\html5RPG_V0.1\debug\images\rpg\lq.png" />
+    <Content Include="Html5\html5RPG_V0.1\debug\images\rpg\wbp.png" />
+    <Content Include="Html5\html5RPG_V0.1\debug\images\rpg\zjy.png" />
+    <Content Include="Html5\html5RPG_V0.1\debug\images\zhanshi\wushi2.png" />
+    <Content Include="Html5\html5RPG_V0.1\debug\personHelper.js" />
+    <Content Include="Html5\html5RPG_V0.1\debug\player.js" />
+    <Content Include="Html5\html5RPG_V0.1\debug\scenarioHelper.js" />
+    <Content Include="Html5\html5RPG_V0.1\debug\SenarioLoader.js" />
+    <Content Include="Html5\html5RPG_V0.1\debug\utility.js" />
+    <Content Include="Html5\html5RPG_V0.1\releaseV0.1\config.js" />
+    <Content Include="Html5\html5RPG_V0.1\releaseV0.1\debug.js" />
+    <Content Include="Html5\html5RPG_V0.1\releaseV0.1\game.html" />
+    <Content Include="Html5\html5RPG_V0.1\releaseV0.1\game.js" />
+    <Content Include="Html5\html5RPG_V0.1\releaseV0.1\global.js" />
+    <Content Include="Html5\html5RPG_V0.1\releaseV0.1\gravity.js" />
+    <Content Include="Html5\html5RPG_V0.1\releaseV0.1\images\rpg\b_1244457293067.jpg" />
+    <Content Include="Html5\html5RPG_V0.1\releaseV0.1\images\rpg\hk.png" />
+    <Content Include="Html5\html5RPG_V0.1\releaseV0.1\images\rpg\lq.png" />
+    <Content Include="Html5\html5RPG_V0.1\releaseV0.1\images\rpg\wbp.png" />
+    <Content Include="Html5\html5RPG_V0.1\releaseV0.1\images\rpg\zjy.png" />
+    <Content Include="Html5\html5RPG_V0.1\releaseV0.1\images\zhanshi\wushi.png" />
+    <Content Include="Html5\html5RPG_V0.1\releaseV0.1\images\zhanshi\wushi2.png" />
+    <Content Include="Html5\html5RPG_V0.1\releaseV0.1\personHelper.js" />
+    <Content Include="Html5\html5RPG_V0.1\releaseV0.1\player.js" />
+    <Content Include="Html5\html5RPG_V0.1\releaseV0.1\scenarioHelper.js" />
+    <Content Include="Html5\html5RPG_V0.1\releaseV0.1\SenarioLoader.js" />
+    <Content Include="Html5\html5RPG_V0.1\releaseV0.1\utility.js" />
+    <Content Include="Html5\html5Slide\config.js" />
+    <Content Include="Html5\html5Slide\drawingHelper.js" />
+    <Content Include="Html5\html5Slide\main.html" />
+    <Content Include="Html5\html5Slide\matser.js" />
+    <Content Include="Html5\html5Slide\res\Blue hills.jpg" />
+    <Content Include="Html5\html5Slide\res\Sunset.jpg" />
+    <Content Include="Html5\html5Slide\res\Water lilies.jpg" />
+    <Content Include="Html5\html5Slide\res\Winter.jpg" />
+    <Content Include="Html5\html5Slide\slide.js" />
+    <Content Include="Html5\html5Slide\utility.js" />
+    <Content Include="Html5\html5Snake\config.js" />
+    <Content Include="Html5\html5Snake\drawingHelper.js" />
+    <Content Include="Html5\html5Snake\game.html" />
+    <Content Include="Html5\html5Snake\game.js" />
+    <Content Include="Html5\html5Snake\global.js" />
+    <Content Include="Html5\html5Snake\player.js" />
+    <Content Include="Html5\html5Snake\utility.js" />
+    <Content Include="Html5\PlantsV0.1\game.html" />
+    <Content Include="Html5\PlantsV0.1\res\1.png" />
+    <Content Include="Html5\PlantsV0.1\res\10.png" />
+    <Content Include="Html5\PlantsV0.1\res\11.png" />
+    <Content Include="Html5\PlantsV0.1\res\12.png" />
+    <Content Include="Html5\PlantsV0.1\res\13.png" />
+    <Content Include="Html5\PlantsV0.1\res\14.png" />
+    <Content Include="Html5\PlantsV0.1\res\15.png" />
+    <Content Include="Html5\PlantsV0.1\res\16.png" />
+    <Content Include="Html5\PlantsV0.1\res\17.png" />
+    <Content Include="Html5\PlantsV0.1\res\18.png" />
+    <Content Include="Html5\PlantsV0.1\res\19.png" />
+    <Content Include="Html5\PlantsV0.1\res\2.png" />
+    <Content Include="Html5\PlantsV0.1\res\20.png" />
+    <Content Include="Html5\PlantsV0.1\res\21.png" />
+    <Content Include="Html5\PlantsV0.1\res\22.png" />
+    <Content Include="Html5\PlantsV0.1\res\23.png" />
+    <Content Include="Html5\PlantsV0.1\res\24.png" />
+    <Content Include="Html5\PlantsV0.1\res\25.png" />
+    <Content Include="Html5\PlantsV0.1\res\26.png" />
+    <Content Include="Html5\PlantsV0.1\res\27.png" />
+    <Content Include="Html5\PlantsV0.1\res\28.png" />
+    <Content Include="Html5\PlantsV0.1\res\29.png" />
+    <Content Include="Html5\PlantsV0.1\res\3.png" />
+    <Content Include="Html5\PlantsV0.1\res\30.png" />
+    <Content Include="Html5\PlantsV0.1\res\31.png" />
+    <Content Include="Html5\PlantsV0.1\res\32.png" />
+    <Content Include="Html5\PlantsV0.1\res\33.png" />
+    <Content Include="Html5\PlantsV0.1\res\34.png" />
+    <Content Include="Html5\PlantsV0.1\res\35.png" />
+    <Content Include="Html5\PlantsV0.1\res\36.png" />
+    <Content Include="Html5\PlantsV0.1\res\38.png" />
+    <Content Include="Html5\PlantsV0.1\res\39.png" />
+    <Content Include="Html5\PlantsV0.1\res\4.png" />
+    <Content Include="Html5\PlantsV0.1\res\40.png" />
+    <Content Include="Html5\PlantsV0.1\res\41.png" />
+    <Content Include="Html5\PlantsV0.1\res\42.png" />
+    <Content Include="Html5\PlantsV0.1\res\43.png" />
+    <Content Include="Html5\PlantsV0.1\res\44.png" />
+    <Content Include="Html5\PlantsV0.1\res\45.png" />
+    <Content Include="Html5\PlantsV0.1\res\46.png" />
+    <Content Include="Html5\PlantsV0.1\res\47.png" />
+    <Content Include="Html5\PlantsV0.1\res\48.png" />
+    <Content Include="Html5\PlantsV0.1\res\5.png" />
+    <Content Include="Html5\PlantsV0.1\res\6.png" />
+    <Content Include="Html5\PlantsV0.1\res\7.png" />
+    <Content Include="Html5\PlantsV0.1\res\8.png" />
+    <Content Include="Html5\PlantsV0.1\res\9.png" />
+    <Content Include="Html5\superMarry\config.js" />
+    <Content Include="Html5\superMarry\debug.js" />
+    <Content Include="Html5\superMarry\drawingHelper.js" />
+    <Content Include="Html5\superMarry\drawingSample.html" />
+    <Content Include="Html5\superMarry\EnemmyManager.js" />
+    <Content Include="Html5\superMarry\game.js" />
+    <Content Include="Html5\superMarry\global.js" />
+    <Content Include="Html5\superMarry\gravity.js" />
+    <Content Include="Html5\superMarry\index.html" />
+    <Content Include="Html5\superMarry\person.js" />
+    <Content Include="Html5\superMarry\res\bg.png" />
+    <Content Include="Html5\superMarry\res\enemy.png" />
+    <Content Include="Html5\superMarry\res\marry.png" />
+    <Content Include="Html5\superMarry\utility.js" />
+    <Content Include="Html5\Test\lab.html" />
+    <Content Include="Html5\WebSocket\.idea\encodings.xml" />
+    <Content Include="Html5\WebSocket\.idea\misc.xml" />
+    <Content Include="Html5\WebSocket\.idea\modules.xml" />
+    <Content Include="Html5\WebSocket\.idea\scopes\scope_settings.xml" />
+    <Content Include="Html5\WebSocket\.idea\vcs.xml" />
+    <Content Include="Html5\WebSocket\.idea\workspace.xml" />
+    <Content Include="Html5\WebSocket\lab.html" />
+    <Content Include="Html5\WebSocket\utility.js" />
+    <Content Include="Html5\WebSocket\webSocket.js" />
+    <Content Include="JS\Jquery\jquery.1.9.js" />
+    <Content Include="JS\Pdf\showPdf.html" />
+    <Content Include="JS\signature\jquery.signature.js" />
+    <Content Include="JS\signature\jSignature.min.js" />
+    <Content Include="JS\signature\sign_demo.html" />
+    <Content Include="JS\WebCam\2_camera.html" />
+    <Content Include="JS\WebCam\2_webcam.js" />
+    <Content Include="JS\WebCam\webcam.swf" />
+    <Content Include="TmpCodeSniped\1.html" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="asp.net\Cache\ObjectCache.aspx.cs">
+      <DependentUpon>ObjectCache.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="asp.net\Cache\ObjectCache.aspx.designer.cs">
+      <DependentUpon>ObjectCache.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="asp.net\Cache\OutputCache.aspx.cs">
+      <DependentUpon>OutputCache.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="asp.net\Cache\OutputCache.aspx.designer.cs">
+      <DependentUpon>OutputCache.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="asp.net\Cache\OutputCacheWithP.aspx.cs">
+      <DependentUpon>OutputCacheWithP.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="asp.net\Cache\OutputCacheWithP.aspx.designer.cs">
+      <DependentUpon>OutputCacheWithP.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="asp.net\DialogPassValue\DivPopup.aspx.cs">
+      <DependentUpon>DivPopup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="asp.net\DialogPassValue\DivPopup.aspx.designer.cs">
+      <DependentUpon>DivPopup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="asp.net\HttpHandler\UrlRewriterHandler.cs" />
+    <Compile Include="asp.net\HttpModule\UrlRewriterModule.cs" />
+    <Compile Include="asp.net\JsCSharp\JSCSharp.aspx.cs">
+      <DependentUpon>JSCSharp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="asp.net\JsCSharp\JSCSharp.aspx.designer.cs">
+      <DependentUpon>JSCSharp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="asp.net\DialogPassValue\ParentPage.aspx.cs">
+      <DependentUpon>ParentPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="asp.net\DialogPassValue\ParentPage.aspx.designer.cs">
+      <DependentUpon>ParentPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="asp.net\DialogPassValue\DialogPage.aspx.cs">
+      <DependentUpon>DialogPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="asp.net\DialogPassValue\DialogPage.aspx.designer.cs">
+      <DependentUpon>DialogPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="asp.net\Redirect\Destination.aspx.cs">
+      <DependentUpon>Destination.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="asp.net\Redirect\Destination.aspx.designer.cs">
+      <DependentUpon>Destination.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="asp.net\Redirect\ExploreRedirect.aspx.cs">
+      <DependentUpon>ExploreRedirect.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="asp.net\Redirect\ExploreRedirect.aspx.designer.cs">
+      <DependentUpon>ExploreRedirect.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="asp.net\Repeater\RepeaterTest.aspx.cs">
+      <DependentUpon>RepeaterTest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="asp.net\Repeater\RepeaterTest.aspx.designer.cs">
+      <DependentUpon>RepeaterTest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\HtmlControl.aspx.cs">
+      <DependentUpon>HtmlControl.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\HtmlControl.aspx.designer.cs">
+      <DependentUpon>HtmlControl.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="JS\WebCam\DocumentDetails.aspx.cs" />
+    <Compile Include="TestEntitys\Student.cs" />
+    <Compile Include="asp.net\Validation\TestForValidation.aspx.cs">
+      <DependentUpon>TestForValidation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="asp.net\Validation\TestForValidation.aspx.designer.cs">
+      <DependentUpon>TestForValidation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="JS\Controls\" />
+    <Folder Include="JS\RegularExpression\" />
+    <Folder Include="WebPageTemplate\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Html5\WebSocket\.idea\.name" />
+    <None Include="Html5\WebSocket\.idea\WebSocket.iml" />
+    <None Include="JS\Pdf\S5401997A_88820004_Gsm_2014-2-25.pdf" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>49712</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

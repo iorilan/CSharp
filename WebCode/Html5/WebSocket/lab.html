@@ -1,0 +1,60 @@
+<html >
+<head>
+<title></title>
+
+</head>
+
+<body>
+<input type="text" id="txtContent"  />
+<input type="button" id="btnConnect" value="connect" />
+<input type="button" id="btnSend" value="send" />
+
+
+<script type="text/javascript">
+
+window.onload = function(){
+
+var ws;
+var host = 'ws://localhost:8181';
+try {
+ ws = new WebSocket(host);
+} catch (err) {
+ alert(err);
+}
+ws.onopen = function () {
+  alert('success');
+};
+ws.onclose = function () {
+  alert('error');
+};
+ws.onmessage = function (evt) {
+  alert('response');
+};
+
+//display();
+}
+
+function display() {  
+	 if (!window.WebSocket){  
+             alert("WebSocket not supported by this browser!");
+			 return;
+     }
+                var ws = new WebSocket("ws://localhost:8181/websession");
+                ws.onmessage = function(evt) {
+				alert(evt.data);
+                };
+
+                ws.onclose = function() {  
+                };  
+
+                ws.onopen = function() {  
+				alert("send");
+                    ws.send("Hello, Server!");  
+					alert("ed");
+                };  
+            }  
+
+</script>
+</body>
+</html>
+

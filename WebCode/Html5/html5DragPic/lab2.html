@@ -1,0 +1,43 @@
+
+<div id="dropHere" style="width:300px;height:300px;border:2px solid"></div>
+
+
+<script type="text/javascript">
+
+
+//var oDragMe = document.getElementById('dragMe');
+
+//oDragMe.addEventListener('dragstart', function(e) {
+//e.dataTransfer.setData('text/plain', e.target.getAttribute('builddate'));
+//},false);
+
+
+var oDropBox = document.getElementById('dropHere');
+
+oDropBox.addEventListener('dragover', function(e) {
+      e.stopPropagation();
+      e.preventDefault();
+}, false);
+
+
+oDropBox.addEventListener('drop', function(e) {
+alert("ondroped");
+e.stopPropagation();
+e.preventDefault();
+
+var fileList  = e.dataTransfer.files,　　//获取拖拽文件
+oImg = document.createElement('img'),
+reader = new FileReader();
+
+reader.onload = function(e) {
+oImg.src = this.result;
+oImg.style.width = "300px";
+oImg.style.height = "300px";
+oDropBox.appendChild(oImg);
+}
+reader.readAsDataURL(fileList[0]);
+},false);
+
+
+
+</script>

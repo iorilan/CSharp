@@ -1,0 +1,96 @@
+<html >
+<head>
+<title>植物大战僵尸V0.1</title>
+
+<style type="text/css">
+.wapon{
+width:50px;
+height:50px;
+border:1px solid #666666
+}
+.pg{
+width:1000px;
+height:500px;
+border:2px solid #a2a2a2
+}
+</style>
+</head>
+
+<body>
+
+<!--
+物品栏
+-->
+<table >
+<tr>
+<td ><img id="img30" src="res/30.png" class="wapon" draggable="true" /></td>
+<td ><img id="img35" src="res/35.png" class="wapon" draggable="true" /></td>
+</tr>
+</table>
+
+<!--
+游戏区域
+-->
+<div id="playground" class="pg">
+
+</div>
+
+<script type="text/javascript">
+
+function AttachStartDragEvent(imgId){
+
+var obj = document.getElementById(imgId);
+obj.addEventListener('dragstart', function(e) {
+　　e.dataTransfer.setData('text/plain', obj.src);
+},false);
+}
+
+
+function AttachEndDragEvent(imgId){
+var oDropBox = document.getElementById('playground'),
+　　tmpData;
+
+oDropBox .addEventListener('drop', function(e) {
+　　tmpData = e.dataTransfer.getData('text/plain');
+	
+	var img = document.createElement("img");
+
+	img.src = tmpData;
+	img.style.width = 50;
+	img.style.height = 50;
+	img.style.position = "absolute";
+	img.style.left = e.clientX;
+	img.style.top = e.clientY;
+
+	oDropBox.appendChild(img);
+},false);
+}
+
+function AttachDragOverEvent(objId){
+var oDropBox = document.getElementById(objId);
+oDropBox.addEventListener('dragover', function(e) {
+　　e.stopPropagation();
+     e.preventDefault();
+},false);
+}
+
+
+////游戏区域注册drag over
+AttachDragOverEvent("playground");
+
+////为物品栏注册拖拽事件
+
+////豌豆
+AttachStartDragEvent("img30");
+AttachEndDragEvent("img30");
+
+////太阳
+AttachStartDragEvent("img35");
+AttachEndDragEvent("img35");
+
+////
+
+</script>
+
+</body>
+</html>

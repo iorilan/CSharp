@@ -1,0 +1,73 @@
+<html >
+<head>
+<title>a html5 2D game</title>
+<script src="game.js"></script>
+</head>
+
+<canvas id="cvsPnl" width="1200" height="450" style="border:4px solid #a1a1a1"></canvas>
+
+<div id="debug" style="width:200px;height:20px;"></div>
+<body>
+
+<script type="text/javascript">
+
+
+var canvas = document.getElementById("cvsPnl");
+var context = canvas.getContext("2d");
+
+     window.onload=function(){
+
+	 GameStart(context);
+	 }
+
+////键盘事件handler
+     document.onkeydown = function (){
+      var key = document.all ? event.keyCode : arguments[0].keyCode;
+	  
+	  ////left
+	  if(key == 37){
+	 direction = "left";
+	 isKeyBoardMoving = true;
+	  }
+	  ////up
+	  else if(key == 38){
+	 direction = "up";
+	 isKeyBoardMoving = true;
+	  }
+	  ////right
+	  else if(key == 39){
+	  direction = "right";
+	  isKeyBoardMoving = true;
+	  }
+	  
+	  //down
+	  else if(key == 40){
+	 direction = "down";
+	 isKeyBoardMoving = true;
+	  }
+     }
+
+	 document.onkeyup = function(){
+	 var key = document.all ? event.keyCode : arguments[0].keyCode;
+	 
+	  if(key == 37 || key == 38 || key == 39 ||key == 40){
+	 isKeyBoardMoving = false;
+	  }
+	 }
+
+	 document.onclick=function(e){
+	 ////如果是左键
+	 if (e.button == 0){
+
+	 clickX = Math.round(e.clientX/10) * 10;
+	 clickY = Math.round(e.clientY/10) * 10;
+	 //DebugTxt(clickX + "," + clickY);
+focusHere(context,clickX,clickY,"#009933");////特殊显示点击的位置
+	// alert(clickX + "," + clickY);
+	 }
+	 
+	 }
+
+</script>
+</body>
+</html>
